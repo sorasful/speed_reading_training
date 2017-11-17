@@ -63,15 +63,32 @@
             document['validate'].bind('click', validate)
 </script>
 
-<label for="zone">Answer: </label><input id="zone">
-<br>
+<h1>Speed reading test</h1>
+<p>The purpose of this game is to train your eye to retain numbers that will show quickly. You can alter the display time
+and then it will disapear and you should enter the response.</p>
+
 <button id="generate">Generate</button>
 <button id="validate">Validate</button>
-<p>Good answers :</p>
-<p id="goods">0</p>
-<p>Bad answers :</p>
-<p id="bads">0</p>
-<p id="percentage"></p>
+<label for="zone">Answer: </label><input id="zone">
+<br>
+
+ <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Goods</th>
+        <th>Bads</th>
+        <th>Percentage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="goods">0</td>
+        <td id="bads">0</td>
+        <td id="percentage"></td>
+      </tr>
+    </tbody>
+  </table>
+
 <p id="number_generated"></p>
 
 
