@@ -48,7 +48,7 @@
                 goods  =  document['goods'].text
                 bads  =  document['bads'].text
                 total = int(goods) + int(bads)
-                percentage = str(int(goods) / total)* 100 + "%"
+                percentage = str((int(goods) / total) * 100) + "%"
                 document['percentage'].text = percentage
 
             def increment_good_answers():
