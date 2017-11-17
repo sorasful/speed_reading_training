@@ -32,7 +32,8 @@
             # Generate random number, then hide it
             def generate():
                 guess = random.randint(1, 99999)
-                timer.set_timeout(reset_score_number, 1000)
+                display_time = int(document['display_time'].value) * 1000
+                timer.set_timeout(reset_score_number, display_time)
                 document['number_generated'].text = guess
                 global current_guess
                 current_guess = str(guess)
@@ -67,9 +68,6 @@
 <p>The purpose of this game is to train your eye to retain numbers that will show quickly. You can alter the display time
 and then it will disapear and you should enter the response.</p>
 
-<button id="generate">Generate</button>
-<button id="validate">Validate</button>
-<label for="zone">Answer: </label><input id="zone">
 <br>
 
  <table class="table table-condensed">
@@ -77,7 +75,7 @@ and then it will disapear and you should enter the response.</p>
       <tr>
         <th>Goods</th>
         <th>Bads</th>
-        <th>Percentage</th>
+        <th>Success percentage</th>
       </tr>
     </thead>
     <tbody>
@@ -89,7 +87,14 @@ and then it will disapear and you should enter the response.</p>
     </tbody>
   </table>
 
+
+<label for="display_time">Display time (s): </label><input id="display_time" value="1"><br>
+<label for="zone">Answer: </label><input id="zone"><br>
+<button id="generate">Generate</button>
+<button id="validate">Validate</button> <br>
+
 <p id="number_generated"></p>
+
 
 
 </body>
