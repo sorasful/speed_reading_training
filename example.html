@@ -23,9 +23,6 @@
             from browser import document, alert, timer
             import random
 
-            goods  =  document['goods'].text
-            bads  =  document['bads'].text
-            total = int(goods) + int(bads)
             current_guess = "00000"
 
             # Change text to hide the generated number
@@ -48,7 +45,11 @@
                 else:
                     increment_bad_answers()
                 document['zone'].value = ""
-
+                goods  =  document['goods'].text
+                bads  =  document['bads'].text
+                total = int(goods) + int(bads)
+                percentage = str(int(goods) / total)* 100 + "%"
+                document['percentage'].text = percentage
 
             def increment_good_answers():
                 document['goods'].text = int(document['goods'].text)  + 1
@@ -70,6 +71,7 @@
 <p id="goods">0</p>
 <p>Bad answers :</p>
 <p id="bads">0</p>
+<p id="percentage"></p>
 <p id="number_generated"></p>
 
 
